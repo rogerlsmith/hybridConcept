@@ -1,22 +1,15 @@
 $(function() {
 
-
-
+	var audioFile;
 
     $("#start").click(function(e){
     	navigator.device.capture.captureAudio(captureSuccess, captureError, {limit:2});
     });
 
-     $("#stop").click(function(e){
-     	alert("stopping");
+    $("#publish").click(function(e){
+     	uploadFile(audioFile);
     });
 
-    $("#preview").click(function(e){
-     	alert("preview audio");
-    });
-    $("#publish").click(function(e){
-     	uploadFile()
-    });
 });
 
 // capture success callback
@@ -24,7 +17,8 @@ var captureSuccess = function(mediaFiles) {
     var i, path, len;
     for (i = 0, len = mediaFiles.length; i < len; i += 1) {
         path = mediaFiles[i].fullPath;
-        // do something interesting with the file
+        
+        audioFile = mediaFiles;
     }
 };
 
@@ -33,7 +27,7 @@ var captureError = function(error) {
     navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
 };
 
-// Upload files to server
+// Upload file to server
 function uploadFile(mediaFile) {
     var ft = new FileTransfer(),
         path = mediaFile.fullPath,
