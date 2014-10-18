@@ -19,9 +19,8 @@ var captureSuccess = function(mediaFiles) {
     var i, path, len;
     for (i = 0, len = mediaFiles.length; i < len; i += 1) {
         path = mediaFiles[i].fullPath;
-        
-        audioFile = mediaFiles;
     }
+    audioFile = path;
 };
 
 
@@ -48,5 +47,5 @@ function uploadFile(mediaFile) {
         function(error) {
             console.log('Error uploading file ' + path + ': ' + error.code);
         },
-        { fileName: name });   
+        { uploaded_file: name });   
 }
