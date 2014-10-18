@@ -46,6 +46,7 @@ function uploadFile(mediaFile) {
         },
         function(error) {
             console.log('Error uploading file ' + path + ': ' + error.code);
+            alert I(error.code);
         },
         { uploaded_file: name });   
 }
