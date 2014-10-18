@@ -4,9 +4,15 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="rogerlsmith@live.com" href="http://rogerlsmith.net">
+        Roger L. Smith
     </author>
     <content src="index.html" />
     <access origin="*" />
+	<feature name="File">
+	   <param name="android-package" value="org.apache.cordova.FileUtils" />
+	</feature>
+	<feature name="FileTransfer">
+	   <param name="android-package" value="org.apache.cordova.FileTransfer" />
+	</feature>
 </widget>

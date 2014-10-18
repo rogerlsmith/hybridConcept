@@ -12,6 +12,8 @@ $(function() {
 
 });
 
+
+
 // capture success callback
 var captureSuccess = function(mediaFiles) {
     var i, path, len;
@@ -22,10 +24,14 @@ var captureSuccess = function(mediaFiles) {
     }
 };
 
+
+
 // capture error callback
 var captureError = function(error) {
     navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
 };
+
+
 
 // Upload file to server
 function uploadFile(mediaFile) {
@@ -34,7 +40,7 @@ function uploadFile(mediaFile) {
         name = mediaFile.name;
 
     ft.upload(path,
-        "http://rogerlsmith.net/upload.php",
+        "http://rogerlsmith.net/concept/add.php",
         function(result) {
             console.log('Upload success: ' + result.responseCode);
             console.log(result.bytesSent + ' bytes sent');
