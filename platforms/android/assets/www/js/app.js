@@ -1,12 +1,17 @@
-$(function() {
+$(function()
+{
 
 	var audioFile;
 
-    $("#start").click(function(e){
+    $( "#start" ).click ( function ( e )
+    {
+        alert ("starting to record");
     	navigator.device.capture.captureAudio(captureSuccess, captureError, {limit:2});
     });
 
-    $("#publish").click(function(e){
+    $( "#publish" ).click ( function ( e )
+    {
+        alert("publish");
      	uploadFile(audioFile);
     });
 
@@ -15,7 +20,9 @@ $(function() {
 
 
 // capture success callback
-var captureSuccess = function(mediaFiles) {
+var captureSuccess = function ( mediaFiles ) 
+{
+    alert("capture Success");
     var i, path, len;
     for (i = 0, len = mediaFiles.length; i < len; i += 1) {
         path = mediaFiles[i].fullPath;
@@ -26,27 +33,30 @@ var captureSuccess = function(mediaFiles) {
 
 
 // capture error callback
-var captureError = function(error) {
-    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+var captureError = function ( error )
+{
+    navigator.notification.alert ( 'Error code: ' + error.code, null, 'Capture Error' );
 };
 
 
-
 // Upload file to server
-function uploadFile(mediaFile) {
-    var ft = new FileTransfer(),
+function uploadFile(mediaFile) 
+{
+    var ft = new FileTransfer ( ),
         path = mediaFile.fullPath,
         name = mediaFile.name;
 
-    ft.upload(path,
+    ft.upload ( path,
         "http://rogerlsmith.net/concept/add.php",
-        function(result) {
+        function ( result ) 
+        {
             console.log('Upload success: ' + result.responseCode);
             console.log(result.bytesSent + ' bytes sent');
         },
-        function(error) {
-            console.log('Error uploading file ' + path + ': ' + error.code);
-            alert I(error.code);
+        function ( error )
+        {
+            console.log ( 'Error uploading file ' + path + ': ' + error.code );
+            alert ( error.code );
         },
         { uploaded_file: name });   
 }
