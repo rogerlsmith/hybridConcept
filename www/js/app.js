@@ -42,6 +42,8 @@ var captureError = function ( error )
 // Upload file to server
 function uploadFile ( mediaFile ) 
 {
+        alert ("uploadFile");
+        
     var ft = new FileTransfer ( ),
         path = mediaFile.fullPath,
         name = mediaFile.name;
