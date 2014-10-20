@@ -23,11 +23,14 @@ var captureSuccess = function ( mediaFiles )
 {
     alert("capture Success");
     var i, path, len;
+    alert ( mediaFiles );
     for ( i = 0, len = mediaFiles.length; i < len; i += 1 )
     {
         path = mediaFiles[i].fullPath;
+        audioFile = mediaFile[i];
+        alert(audioFile);
     }
-    audioFile = path;
+    
 };
 
 
@@ -42,7 +45,8 @@ var captureError = function ( error )
 // Upload file to server
 function uploadFile ( mediaFile ) 
 {
-        alert ("uploadFile");
+    alert ( "in upload" );
+    alert ( mediaFile );
         
     var ft = new FileTransfer ( ),
         path = mediaFile.fullPath,
