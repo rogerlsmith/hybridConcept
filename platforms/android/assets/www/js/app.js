@@ -1,7 +1,11 @@
+
+var audioFile = null;
+var filePath = "";
+var fileName = "";
+
 $(function()
 {
 
-	var audioFile;
 
     $( "#start" ).click ( function ( e )
     {
@@ -21,15 +25,11 @@ $(function()
 // capture success callback
 var captureSuccess = function ( mediaFiles ) 
 {
-    alert("capture Success");
+
     var i, path, len;
-    alert ( mediaFiles );
-    for ( i = 0, len = mediaFiles.length; i < len; i += 1 )
-    {
-        path = mediaFiles[i].fullPath;
-        audioFile = mediaFile[i];
-        alert(audioFile);
-    }
+    audioFile = mediaFiles[0];
+    filePath = audioFile.fullPath;
+    fileName = audioFile.name;
     
 };
 
@@ -43,15 +43,16 @@ var captureError = function ( error )
 
 
 // Upload file to server
-function uploadFile ( mediaFile ) 
+function uploadFile ( ) 
 {
-    alert ( "in upload" );
-    alert ( mediaFile );
-        
     var ft = new FileTransfer ( ),
-        path = mediaFile.fullPath,
-        name = mediaFile.name;
+        path = filePath,
+        name = fileName;
 
+//    var options = new FileUploadOptions();
+//    options.fileKey="file";
+//    options.fileName=fileName;
+//    options.mimeType="audio/mpeg";
 
     ft.upload ( path,
         "http://rogerlsmith.net/concept/add.php",
@@ -65,6 +66,5 @@ function uploadFile ( mediaFile )
             console.log ( 'Error uploading file ' + path + ': ' + error.code );
             alert ( error.code );
         },
-        { uploaded_file: name });
-        alert ("uploading file");
+        { fileName: name } );
 }

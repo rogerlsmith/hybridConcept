@@ -783,6 +783,7 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\j
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images\icons-svg\video-black.svg \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images\icons-svg\video-white.svg \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.media \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.media-capture \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen \
@@ -809,6 +810,9 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plug
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file\www\requestFileSystem.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file\www\android\FileSystem.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.media\www \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.media\www\Media.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.media\www\MediaError.js \

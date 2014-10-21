@@ -71,6 +71,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransferError.js",
+        "id": "org.apache.cordova.file-transfer.FileTransferError",
+        "clobbers": [
+            "window.FileTransferError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.file-transfer/www/FileTransfer.js",
+        "id": "org.apache.cordova.file-transfer.FileTransfer",
+        "clobbers": [
+            "window.FileTransfer"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -223,6 +237,7 @@ module.exports.metadata =
     "org.apache.cordova.media-capture": "0.3.5-dev",
     "org.apache.cordova.media": "0.2.15-dev",
     "org.apache.cordova.splashscreen": "0.3.5-dev",
+    "org.apache.cordova.file-transfer": "0.4.8-dev",
     "org.apache.cordova.file": "1.3.1"
 }
 // BOTTOM OF METADATA
