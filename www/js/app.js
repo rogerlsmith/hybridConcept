@@ -49,11 +49,6 @@ function uploadFile ( )
         path = filePath,
         name = fileName;
 
-//    var options = new FileUploadOptions();
-//    options.fileKey="file";
-//    options.fileName=fileName;
-//    options.mimeType="audio/mpeg";
-
     ft.upload ( path,
         "http://rogerlsmith.net/concept/add.php",
         function ( result ) 

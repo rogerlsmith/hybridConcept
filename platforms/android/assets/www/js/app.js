@@ -60,6 +60,7 @@ function uploadFile ( )
         {
             console.log ( 'Upload success: ' + result.responseCode );
             console.log ( result.bytesSent + ' bytes sent' );
+            alert (result.bytesSent);
         },
         function ( error )
         {
