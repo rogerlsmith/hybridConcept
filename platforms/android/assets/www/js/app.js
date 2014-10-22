@@ -49,23 +49,17 @@ function uploadFile ( )
         path = filePath,
         name = fileName;
 
-//    var options = new FileUploadOptions();
-//    options.fileKey="file";
-//    options.fileName=fileName;
-//    options.mimeType="audio/mpeg";
-
-    ft.upload ( path,
+    ft.upload ( filePath,
         "http://rogerlsmith.net/concept/add.php",
         function ( result ) 
         {
-            console.log ( 'Upload success: ' + result.responseCode );
-            console.log ( result.bytesSent + ' bytes sent' );
-            alert (result.bytesSent);
+            alert ( 'Upload success: ' + result.responseCode );
         },
+
         function ( error )
         {
             console.log ( 'Error uploading file ' + path + ': ' + error.code );
-            alert ( error.code );
+            alert ( 'Error: ' + error.code );
         },
-        { fileName: name } );
+        { fileName: fileName } );
 }
