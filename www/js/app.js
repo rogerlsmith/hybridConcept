@@ -18,6 +18,11 @@ $(function()
      	uploadFile ( audioFile );
     });
 
+    $( "#browse" ).click ( function ( e )
+    {
+        var ref = window.open('http://rogerlsmith.net/concept/browse.php', '_self', 'location=no');
+    });
+
 });
 
 
