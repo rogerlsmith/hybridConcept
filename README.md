@@ -9,3 +9,5 @@ Now looking at ngCordova and it's wrappers of some interesting AngularJS methods
 Used npm to install bower, and will use bower to install ngCordova.
 
 Considering bootstrap for website
+
+Adding Pocketsphinx - http://syl22-00.github.io/pocketsphinx.js/

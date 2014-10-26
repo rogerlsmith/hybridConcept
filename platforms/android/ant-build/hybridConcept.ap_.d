@@ -66,6 +66,7 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\a
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\index.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery-2.1.1.min.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4 \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\demos \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\jquery.mobile-1.4.4.css \
@@ -806,6 +807,12 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\j
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images\icons-svg\user-white.svg \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images\icons-svg\video-black.svg \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4\images\icons-svg\video-white.svg \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\audioRecorder.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\audioRecorderWorker.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\callbackManager.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\pocketsphinx.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\pocketsphinx_zh.js \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\pocketsphinx\recognizer.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.file-transfer \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser \
