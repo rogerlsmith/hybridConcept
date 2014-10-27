@@ -78,12 +78,21 @@ var captureError = function ( error )
 //
 function uploadFile ( ) 
 {
+    var url = "";
+
     var ft = new FileTransfer ( ),
         path = filePath,
         name = fileName;
 
+    if $("#private").attr("checked")
+    {
+        url = "http://rogerlsmith.net/concept/privateadd.php";
+    } else {
+        url = "http://rogerlsmith.net/concept/add.php"
+    }
+
     ft.upload ( filePath,
-        "http://rogerlsmith.net/concept/add.php",
+        url,
         function ( result ) 
         {
             alert ( 'Upload success: ' + result.responseCode );
