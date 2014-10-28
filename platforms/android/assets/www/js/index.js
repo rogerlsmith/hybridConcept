@@ -43,7 +43,7 @@ var app = {
     onDeviceReady: function() {
         alert ("onDeviceReady");
 
-/*        
+     
         //
         // start recording on click
         //
@@ -56,6 +56,7 @@ var app = {
         });
 
 
+/*
         //
         // publish on click
         //
