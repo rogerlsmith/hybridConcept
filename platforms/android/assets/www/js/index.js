@@ -7,9 +7,9 @@
 //
 // Globals
 //
-//var audioFile   = null;
-//var filePath    = "";
-//var fileName    = "";
+var audioFile   = null;
+var filePath    = "";
+var fileName    = "";
 
 
 //
