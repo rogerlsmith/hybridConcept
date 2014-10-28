@@ -1,51 +1,139 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+//
+// Author: Roger L. Smith
+// Date: October 2014
+//
+
+
+//
+// Globals
+//
+//var audioFile   = null;
+//var filePath    = "";
+//var fileName    = "";
+
+
+//
+// hybridConcept app object
+//
 var app = {
+
     // Application Constructor
-    initialize: function() {
+    initialize: function() 
+    {
+        alert("initialize");
         this.bindEvents();
     },
+
+
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function() 
+    {
+        alert("bindEvents");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+
+
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        alert ("onDeviceReady");
+
+/*        
+        //
+        // start recording on click
+        //
+        $("#start").click(function(e) {
+            alert ("start");
+            navigator.device.capture.captureAudio ( this.captureSuccess, 
+                                                    this.captureError, 
+                                                    { limit:2 }
+                                            );
+        });
+
+
+        //
+        // publish on click
+        //
+        $("#publish").click(function(e) {
+            alert("publish");
+            this.uploadFile ( audioFile );
+        });
+
+
+
+        //
+        // browse on click
+        //
+        $( "#browse" ).click (function ( e )
+        {
+            alert("browse");
+            var ref = window.open ( 'http://rogerlsmith.net/concept/browse.php', 
+                                        '_self', 
+                                        'location=no' );
+        });
+*/
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+/*
+    //
+    // capture success callback
+    //
+    captureSuccess: function ( mediaFiles ) 
+    {
+        var i, path, len;
+        audioFile = mediaFiles[0];
+        filePath = audioFile.fullPath;
+        fileName = audioFile.name;
+        
+    },
 
-        console.log('Received Event: ' + id);
+    //
+    // capture error callback
+    //
+    captureError: function ( error )
+    {
+        navigator.notification.alert ( 'Error code: ' + error.code, null, 'Capture Error' );
+    },
+
+    //
+    // Upload file to server
+    //
+    uploadFile: function ( ) 
+    {
+        var url = "";
+
+        var ft = new FileTransfer ( ),
+            path = filePath,
+            name = fileName;
+
+        if $("#private").attr("checked")
+        {
+            url = "http://rogerlsmith.net/concept/privateadd.php";
+        } else {
+            url = "http://rogerlsmith.net/concept/add.php"
+        }
+
+        ft.upload ( filePath,
+            url,
+            function ( result ) 
+            {
+                alert ( 'Upload success: ' + result.responseCode );
+            },
+
+            function ( error )
+            {
+                console.log ( 'Error uploading file ' + path + ': ' + error.code );
+                alert ( 'Error: ' + error.code );
+            },
+            { fileName: fileName } );
     }
+*/
 };
 
+alert("commencing initialize");
 app.initialize();

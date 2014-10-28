@@ -15,14 +15,15 @@ var fileName    = "";
 //
 // document ready
 //
-$( function ( )
-{
-
+$(function() {
+    alert("documentready");
+/*
     //
     // start recording on click
     //
-    $( "#start" ).click ( function ( e )
+    $( "#start" ).click (function ( e )
     {
+        alert ("start");
     	navigator.device.capture.captureAudio ( captureSuccess, 
                                                     captureError, 
                                                     { limit:2 }
@@ -33,7 +34,7 @@ $( function ( )
     //
     // publish on click
     //
-    $( "#publish" ).click ( function ( e )
+    $( "#publish" ).click (function ( e )
     {
      	uploadFile ( audioFile );
     });
@@ -41,13 +42,13 @@ $( function ( )
     //
     // browse on click
     //
-    $( "#browse" ).click ( function ( e )
+    $( "#browse" ).click (function ( e )
     {
         var ref = window.open ( 'http://rogerlsmith.net/concept/browse.php', 
                                     '_self', 
                                     'location=no' );
     });
-
+*/
 });
 
 
