@@ -130,7 +130,9 @@ var app = {
         ft = new FileTransfer ( );
 
         ft.upload ( filePath,
+            
             url,
+
             function ( result ) 
             {
                 alert ( 'Upload success: ' + result.responseCode );
@@ -141,6 +143,7 @@ var app = {
                 console.log ( 'Error uploading file ' + path + ': ' + error.code );
                 alert ( 'Error: ' + error.code );
             },
+
             { fileName: fileName } );
 
     }
