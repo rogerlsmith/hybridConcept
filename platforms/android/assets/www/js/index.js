@@ -10,6 +10,8 @@
 var audioFile   = null;
 var filePath    = "";
 var fileName    = "";
+var url         = "http://rogerlsmith.net/concept/add.php";
+var ft          = null;
 
 
 //
@@ -17,11 +19,14 @@ var fileName    = "";
 //
 var app = {
 
-    // Application Constructor
+    //
+    // Application Initializer
+    //
     initialize: function() 
     {
-        alert("initialize");
+
         this.bindEvents();
+
     },
 
 
@@ -31,8 +36,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() 
     {
-        alert("bindEvents");
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+
+        document.addEventListener('deviceready', 
+                                        this.onDeviceReady, 
+                                        false);
+
     },
 
 
@@ -41,28 +49,28 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert ("onDeviceReady");
 
      
         //
         // start recording on click
         //
-        $("#start").click(function(e) {
-            alert ("start");
+        $("#start").click(function(e)
+        {
+
             navigator.device.capture.captureAudio ( this.captureSuccess, 
                                                     this.captureError, 
-                                                    { limit:2 }
-                                            );
+                                                    { limit:2 });
         });
 
 
-/*
         //
         // publish on click
         //
-        $("#publish").click(function(e) {
-            alert("publish");
+        $("#publish").click(function(e)
+        {
+
             this.uploadFile ( audioFile );
+
         });
 
 
@@ -72,52 +80,54 @@ var app = {
         //
         $( "#browse" ).click (function ( e )
         {
-            alert("browse");
+
             var ref = window.open ( 'http://rogerlsmith.net/concept/browse.php', 
                                         '_self', 
                                         'location=no' );
         });
-*/
+
     },
 
-/*
+
     //
     // capture success callback
     //
     captureSuccess: function ( mediaFiles ) 
     {
-        var i, path, len;
+
         audioFile = mediaFiles[0];
         filePath = audioFile.fullPath;
         fileName = audioFile.name;
         
     },
 
+
     //
     // capture error callback
     //
     captureError: function ( error )
     {
-        navigator.notification.alert ( 'Error code: ' + error.code, null, 'Capture Error' );
+
+        navigator.notification.alert ( 'Error code: ' + error.code, 
+                                            null,
+                                            'Capture Error' );
+
     },
+
 
     //
     // Upload file to server
     //
     uploadFile: function ( ) 
     {
-        var url = "";
-
-        var ft = new FileTransfer ( ),
-            path = filePath,
-            name = fileName;
-
-        if $("#private").attr("checked")
+      
+/*      
+        if $("#private").prop('checked', true);
         {
             url = "http://rogerlsmith.net/concept/privateadd.php";
-        } else {
-            url = "http://rogerlsmith.net/concept/add.php"
         }
+*/
+        ft = new FileTransfer ( );
 
         ft.upload ( filePath,
             url,
@@ -132,9 +142,9 @@ var app = {
                 alert ( 'Error: ' + error.code );
             },
             { fileName: fileName } );
+
     }
-*/
+
 };
 
-alert("commencing initialize");
 app.initialize();

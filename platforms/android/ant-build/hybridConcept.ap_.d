@@ -62,7 +62,6 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\css\index.css \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\img\logo.png \
-c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\app.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\index.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery-2.1.1.min.js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js\jquery.mobile-1.4.4 \
