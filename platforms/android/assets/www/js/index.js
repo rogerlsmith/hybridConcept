@@ -17,7 +17,8 @@ var ft          = null;
 //
 // hybridConcept app object
 //
-var app = {
+var app =
+{
 
     //
     // Application Initializer
@@ -25,7 +26,7 @@ var app = {
     initialize: function() 
     {
 
-        this.bindEvents();
+        app.bindEvents();
 
     },
 
@@ -38,7 +39,7 @@ var app = {
     {
 
         document.addEventListener('deviceready', 
-                                        this.onDeviceReady, 
+                                        app.onDeviceReady, 
                                         false);
 
     },
@@ -48,17 +49,17 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-
+    onDeviceReady: function ( ) 
+    {
      
         //
         // start recording on click
         //
-        $("#start").click(function(e)
+        $( "#start" ).click ( function ( e )
         {
 
-            navigator.device.capture.captureAudio ( this.captureSuccess, 
-                                                    this.captureError, 
+            navigator.device.capture.captureAudio ( app.captureSuccess, 
+                                                    app.captureError, 
                                                     { limit:2 });
         });
 
@@ -66,10 +67,10 @@ var app = {
         //
         // publish on click
         //
-        $("#publish").click(function(e)
+        $( "#publish" ).click ( function ( e )
         {
 
-            this.uploadFile ( audioFile );
+            app.uploadFile ( audioFile );
 
         });
 
@@ -78,7 +79,7 @@ var app = {
         //
         // browse on click
         //
-        $( "#browse" ).click (function ( e )
+        $( "#browse" ).click ( function ( e )
         {
 
             var ref = window.open ( 'http://rogerlsmith.net/concept/browse.php', 
@@ -121,16 +122,22 @@ var app = {
     uploadFile: function ( ) 
     {
       
-/*      
-        if $("#private").prop('checked', true);
+        privMessage = $( "#private" ).is ( ':checked' );
+        alert (privMessage);
+
+        if ( privMessage === true )
         {
             url = "http://rogerlsmith.net/concept/privateadd.php";
         }
-*/
+
+        alert (url);
+
         ft = new FileTransfer ( );
 
         ft.upload ( filePath,
+            
             url,
+
             function ( result ) 
             {
                 alert ( 'Upload success: ' + result.responseCode );
@@ -141,6 +148,7 @@ var app = {
                 console.log ( 'Error uploading file ' + path + ': ' + error.code );
                 alert ( 'Error: ' + error.code );
             },
+
             { fileName: fileName } );
 
     }
