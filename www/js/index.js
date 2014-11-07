@@ -121,7 +121,15 @@ var app =
     //
     uploadFile: function ( ) 
     {
-      
+
+        tagMessage = $( "#tags" ).is ( ':checked' );
+
+        if (tagMessage === true )
+        {
+
+        }
+
+        
         privMessage = $( "#private" ).is ( ':checked' );
 
         if ( privMessage === true )

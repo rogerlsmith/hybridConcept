@@ -121,16 +121,21 @@ var app =
     //
     uploadFile: function ( ) 
     {
-      
+
+        tagMessage = $( "#tags" ).is ( ':checked' );
+
+        if (tagMessage === true )
+        {
+
+        }
+
+        
         privMessage = $( "#private" ).is ( ':checked' );
-        alert (privMessage);
 
         if ( privMessage === true )
         {
             url = "http://rogerlsmith.net/concept/privateadd.php";
         }
-
-        alert (url);
 
         ft = new FileTransfer ( );
 
