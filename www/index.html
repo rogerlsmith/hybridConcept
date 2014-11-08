@@ -48,9 +48,11 @@
                     Login
                 </h3>
             </div>
-
-            Username<input type="text" value="username"><br/>
-            Password<input type="password" value="password"><br/>
+            <form action="http://rogerlsmith.net/bower_components/bootstrap/login" method="POST">
+                Username<input type="text" value="username" /br/>
+                Password<input type="password" value="password" /br/>
+                <input type="submit" />
+            </form>
         </div>
 
         <div data-role="page" id="register">
@@ -61,8 +63,11 @@
                 </h3>
             </div>
 
-            Username<input type="text" value="username"><br/>
-            Password<input type="password" value="password"><br/>
+            <form action="http://rogerlsmith.net/bower_components/bootstrap/register.php" method="POST">
+                Username<input type="text" value="username" /br/>
+                Password<input type="password" value="password" /br/>
+                <input type="submit" />
+            </form>
 
             <footer data-role="footer" data-position="fixed">
                 copyright 2014 - Roger L. Smith - <a href="http://rogerlsmith.net">rogerlsmith.net</a>
