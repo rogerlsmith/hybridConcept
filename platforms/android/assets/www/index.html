@@ -29,9 +29,9 @@
                 </h3>
             </div>  
         
-            <a href="#login">Login</a><br/><br/>
-            <a href="#register">Register</a><br/><br/>
-            <a href="#makenoise">Make Noise</a><br/><br/>
+            <a href="#login" class="ui-btn ui-icon-home ui-btn-icon-left">Login</a><br/><br/>
+            <a href="#register" class="ui-btn ui-icon-plus ui-btn-icon-left">Register</a><br/><br/>
+            <a href="#makenoise" class="ui-btn ui-icon-audio ui-btn-icon-left">Make Noise</a><br/><br/>
 
             <button id="browse">Browse</button>
 
@@ -80,14 +80,15 @@
 
         <div data-role="page" id="makenoise">
 
-            <div data-theme="a" data-role="header">
+            <div class="ui-btn ui-icon-audio ui-btn-icon-left" data-theme="a" data-role="header">
                 <h3>
                     Make Noise
                 </h3>
             </div>
             <button id="start">Record</button><br/>
-            <label><input type="checkbox" name="tag" value="maketags" id="tags" />make tags</label>
-            <label><input type="checkbox" name="private" value="privatemessage" id="private" />private message</label><br />
+            <label class="ui-btn ui-icon-tag ui-btn-icon-left"><input type="checkbox" name="tag" value="maketags" id="tags" />make tags</label>
+            <label class="ui-btn ui-icon-lock ui-btn-icon-left"><input type="checkbox" name="private" value="privatemessage" id="private" />private message</label><br />
+            <label class="ui-btn ui-icon-location ui-btn-icon-left"><input type="checkbox" name="private" value="privatemessage" id="private" />location</label><br />
             <button id="publish">Publish</button><br />
 
             <footer data-role="footer" data-position="fixed">
