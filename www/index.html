@@ -49,9 +49,10 @@
                     Login
                 </h3>
             </div>
-            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/login.php" method="POST">
+            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php" method="POST">
                 Username<input type="text" name="username" /br/>
                 Password<input type="password" name="password" /br/>
+                <input type="hidden" name="method" value="login" />
                 <input type="submit" value="submit" />
             </form>
         </div>
@@ -64,12 +65,13 @@
                 </h3>
             </div>
 
-            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/register.php" method="POST">
+            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php" method="POST">
                 Username<input type="text" name="username" /><br/>
                 First name<input type="text" name="firstname" /><br/>
                 Last name<input type="text" name="lastname" /><br/>
                 Email<input type="text" name="email" /><br/>
                 Password<input type="password" name="password" /><br/>
+                <input type="hidden" name="method" value="register" />
                 <input type="submit" value="Submit" />
             </form>
 

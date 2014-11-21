@@ -9,13 +9,14 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/pure/pure-min.css" />
         <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css" />
 
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.js"></script>
-        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+ <!--         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="bower_components/ngCordova/dist/ngcordova.js"></script>
- <!--       <script type="text/javascript" src="js/pocketsphinx/pocketsphinx.js"></script>  -->
+        <script type="text/javascript" src="js/pocketsphinx/pocketsphinx.js"></script>  -->
 
         <title>concept Hybrid (will run on any mobile device)</title>
 
@@ -48,10 +49,11 @@
                     Login
                 </h3>
             </div>
-            <form action="http://rogerlsmith.net/bower_components/bootstrap/login.php" method="POST">
+            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php" method="POST">
                 Username<input type="text" name="username" /br/>
                 Password<input type="password" name="password" /br/>
-                <input type="submit" />
+                <input type="hidden" name="method" value="login" />
+                <input type="submit" value="submit" />
             </form>
         </div>
 
@@ -63,12 +65,13 @@
                 </h3>
             </div>
 
-            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/register.php" method="POST">
+            <form action="http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php" method="POST">
                 Username<input type="text" name="username" /><br/>
                 First name<input type="text" name="firstname" /><br/>
                 Last name<input type="text" name="lastname" /><br/>
                 Email<input type="text" name="email" /><br/>
                 Password<input type="password" name="password" /><br/>
+                <input type="hidden" name="method" value="register" />
                 <input type="submit" value="Submit" />
             </form>
 
