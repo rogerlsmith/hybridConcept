@@ -10,7 +10,7 @@
 var audioFile   = null;
 var filePath    = "";
 var fileName    = "";
-var url         = "http://rogerlsmith.net/concept/add.php";
+var url         = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
 var ft          = null;
 
 
@@ -134,7 +134,10 @@ var app =
 
         if ( privMessage === true )
         {
-            url = "http://rogerlsmith.net/concept/privateadd.php";
+            method = "private";
+        } else 
+        {
+            method = "public";
         }
 
         ft = new FileTransfer ( );
@@ -154,7 +157,11 @@ var app =
                 alert ( 'Error: ' + error.code );
             },
 
-            { fileName: fileName } );
+            {
+                fileName: fileName,
+                method: method
+            }
+        );
 
     }
 
