@@ -60,6 +60,7 @@ c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\img 
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\index.html \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\js \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\plugins \
+c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\success.html \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\css\index.css \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\css\pure \
 c:\Users\Roger\phonegap-projects\hybridConcept\platforms\android\assets\www\css\pure\base-context-min.css \

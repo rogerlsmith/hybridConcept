@@ -102,9 +102,13 @@ var app =
 
             if ( u != '' && p != '' )
             {
-                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php?method=login&returnformat=json", { username: u, password:p }, function ( res )
+                alert("starting post");
+//                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php?method=login&returnformat=json", { username: u, password:p }, function ( res )
+                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", { username: u, password:p }, function ( res )
                 {
-                    if(res == true) {
+                    alert ("return from post");
+                    
+                    if ( res == true ) {
                         $.mobile.changePage( "success.html" );
                     } else {
                         navigator.notification.alert( "Your login failed", function ( ) { } );
