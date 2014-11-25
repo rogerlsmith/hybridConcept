@@ -97,24 +97,26 @@ var app =
             //disable the button so we can't resubmit while we wait
             $("#submitButton",this).attr("disabled","disabled");
 
-            var u = $("#username", this).val();
-            var p = $("#password", this).val();
+            var u = $("#username").val();
+            var p = $("#password").val();
 
             if ( u != '' && p != '' )
             {
                 alert("starting post");
 //                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php?method=login&returnformat=json", { username: u, password:p }, function ( res )
-                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", { username: u, password:p }, function ( res )
-                {
-                    alert ("return from post");
-                    
-                    if ( res == true ) {
-                        $.mobile.changePage( "success.html" );
-                    } else {
-                        navigator.notification.alert( "Your login failed", function ( ) { } );
-                    }
-                    $( "#submitButton" ).removeAttr( "disabled" );
-                },"json");
+                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", 
+                        {username: u, password: p }, 
+                        function ( res )
+                        {
+                            alert ( res['username'] ) ;
+                            
+                            // if ( res == true ) {
+                            //     $.mobile.changePage( "success.html" );
+                            // } else {
+                            //     navigator.notification.alert( "Your login failed", function ( ) { } );
+                            // }
+                            $( "#submitButton" ).removeAttr( "disabled" );
+                        });
             }
             return false;
         });
