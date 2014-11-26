@@ -102,23 +102,24 @@ var app =
 
             if ( u != '' && p != '' )
             {
-                alert("starting post");
-//                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php?method=login&returnformat=json", { username: u, password:p }, function ( res )
-                $.post( "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", 
-                        {username: u, password: p }, 
-                        function ( res )
+                e.preventDefault();
+                $.ajax({
+                        url         : "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", 
+                        dataType    : 'json',
+                        data        : $("#loginForm").serialize(), 
+                        success     : function(response)
+                        { 
+                            alert("success "+response);
+                        },
+                        error       : function(xhr, status, error)
                         {
-                            alert ( res['username'] ) ;
-                            
-                            // if ( res == true ) {
-                            //     $.mobile.changePage( "success.html" );
-                            // } else {
-                            //     navigator.notification.alert( "Your login failed", function ( ) { } );
-                            // }
-                            $( "#submitButton" ).removeAttr( "disabled" );
-                        });
+                            alert(error);
+                       //     alert(xhr.responseText);
+                       //     var err = eval("(" + xhr.responseText + ")"); 
+                            //alert(err.Message);
+                        }
+                });
             }
-            return false;
         });
 
     },
