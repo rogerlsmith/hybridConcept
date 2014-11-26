@@ -11,6 +11,7 @@ var audioFile   = null;
 var filePath    = "";
 var fileName    = "";
 var url         = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
+var loginUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php";
 var ft          = null;
 
 
@@ -102,20 +103,26 @@ var app =
 
             if ( u != '' && p != '' )
             {
-                e.preventDefault();
-                $.ajax({
-                        url         : "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php", 
+                e.preventDefault ( );
+
+                $.ajax ( {
+                        type        : "POST",
+                        url         : loginUrl,
                         dataType    : 'json',
                         data        : $( "#loginForm" ).serialize ( ), 
                         success     : function ( response )
-                        { 
-                            alert ( "success " + response );
-                        },
+                                        { 
+                                            alert ( "login success " + response );
+                                        },
                         error       : function ( xhr, status, error )
-                        {
-                            alert ( error );
-                        }
-                });
+                                        {
+                                            alert ( error );
+                                        }
+                } );
+            } 
+            else 
+            {
+                alert ( "Neither Username nor Password may be empty!" );    
             }
         });
 
