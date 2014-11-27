@@ -18,16 +18,14 @@ var ft          = null;
 //
 // hybridConcept app object
 //
-var app =
-{
+var app = {
 
     //
     // Application Initializer
     //
-    initialize: function() 
-    {
+    initialize: function ( ) {
 
-        app.bindEvents();
+        app.bindEvents ( );
 
     },
 
@@ -36,8 +34,7 @@ var app =
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() 
-    {
+    bindEvents: function ( ) {
 
         document.addEventListener('deviceready', 
                                         app.onDeviceReady, 
@@ -50,14 +47,12 @@ var app =
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function ( ) 
-    {
+    onDeviceReady: function ( ) {
      
         //
         // start recording on click
         //
-        $( "#start" ).click ( function ( e )
-        {
+        $( "#start" ).click ( function ( e ) {
 
             navigator.device.capture.captureAudio ( app.captureSuccess, 
                                                     app.captureError, 
@@ -68,8 +63,7 @@ var app =
         //
         // publish on click
         //
-        $( "#publish" ).click ( function ( e )
-        {
+        $( "#publish" ).click ( function ( e ) {
 
             app.uploadFile ( audioFile );
 
@@ -80,8 +74,7 @@ var app =
         //
         // browse on click
         //
-        $( "#browse" ).click ( function ( e )
-        {
+        $( "#browse" ).click ( function ( e ) {
 
             var ref = window.open ( 'http://rogerlsmith.net/concept/browse.php', 
                                         '_self', 
@@ -92,8 +85,7 @@ var app =
         //
         // login on click
         //
-        $( "#loginForm" ).on ( "submit", function ( e )
-        {
+        $( "#loginForm" ).on ( "submit", function ( e ) {
 
             //disable the button so we can't resubmit while we wait
             $("#submitButton",this).attr("disabled","disabled");
@@ -101,8 +93,7 @@ var app =
             var u = $("#username").val();
             var p = $("#password").val();
 
-            if ( u != '' && p != '' )
-            {
+            if ( u != '' && p != '' ) {
                 e.preventDefault ( );
 
                 $.ajax ( {
@@ -110,18 +101,18 @@ var app =
                         url         : loginUrl,
                         dataType    : 'json',
                         data        : $( "#loginForm" ).serialize ( ), 
-                        success     : function ( response )
-                                        { 
-                                            alert ( "login success " + response );
-                                        },
-                        error       : function ( xhr, status, error )
-                                        {
-                                            alert ( error );
+                        success     : function ( response ) {
+                                        if ( response['login'] == "success" ) {
+                                            alert ( "Login Success" );
+                                        } else {
+                                            alert ( "Login Failure" );
                                         }
+                                    },
+                        error       : function ( xhr, status, error ) {
+                                        alert ( error );
+                                    }
                 } );
-            } 
-            else 
-            {
+            } else {
                 alert ( "Neither Username nor Password may be empty!" );    
             }
         });
@@ -132,8 +123,7 @@ var app =
     //
     // capture success callback
     //
-    captureSuccess: function ( mediaFiles ) 
-    {
+    captureSuccess: function ( mediaFiles ) {
 
         audioFile = mediaFiles[0];
         filePath = audioFile.fullPath;
@@ -145,8 +135,7 @@ var app =
     //
     // capture error callback
     //
-    captureError: function ( error )
-    {
+    captureError: function ( error ) {
 
         navigator.notification.alert ( 'Error code: ' + error.code, 
                                             null,
@@ -158,24 +147,20 @@ var app =
     //
     // Upload file to server
     //
-    uploadFile: function ( ) 
-    {
+    uploadFile: function ( ) {
 
         tagMessage = $( "#tags" ).is ( ':checked' );
 
-        if (tagMessage === true )
-        {
+        if ( tagMessage === true ) {
 
         }
 
         
         privMessage = $( "#private" ).is ( ':checked' );
 
-        if ( privMessage === true )
-        {
+        if ( privMessage === true ) {
             method = "private";
-        } else 
-        {
+        } else {
             method = "public";
         }
 
@@ -185,13 +170,11 @@ var app =
             
             url,
 
-            function ( result ) 
-            {
+            function ( result ) {
                 alert ( 'Upload success: ' + result.responseCode );
             },
 
-            function ( error )
-            {
+            function ( error ) {
                 console.log ( 'Error uploading file ' + path + ': ' + error.code );
                 alert ( 'Error: ' + error.code );
             },
@@ -206,4 +189,4 @@ var app =
 
 };
 
-app.initialize();
+app.initialize ( );
