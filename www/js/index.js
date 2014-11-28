@@ -88,7 +88,7 @@ var app = {
         $( "#loginForm" ).on ( "submit", function ( e ) {
 
             //disable the button so we can't resubmit while we wait
-            $("#submitButton",this).attr("disabled","disabled");
+            $( "#submitButton", this ).attr ( "disabled", "disabled" );
 
             var u = $("#username").val();
             var p = $("#password").val();
@@ -107,9 +107,11 @@ var app = {
                                         } else {
                                             alert ( "Login Failure" );
                                         }
+                                        $( "#submitButton", this ).attr ( "disabled", "disabled" );
                                     },
                         error       : function ( xhr, status, error ) {
                                         alert ( error );
+                                        $( "#submitButton", this ).attr ( "disabled", "disabled" );
                                     }
                 } );
             } else {
