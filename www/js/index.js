@@ -10,7 +10,7 @@
 var audioFile   = null;
 var filePath    = "";
 var fileName    = "";
-var url         = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
+var audioUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
 var loginUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php";
 var ft          = null;
 
@@ -170,7 +170,7 @@ var app = {
 
         ft.upload ( filePath,
             
-            url,
+            audioUrl,
 
             function ( result ) {
                 alert ( 'Upload success: ' + result.responseCode );
