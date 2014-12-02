@@ -13,6 +13,7 @@ var fileName    = "";
 var audioUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
 var loginUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php";
 var ft          = null;
+var user_id     = null;
 
 
 //
@@ -36,7 +37,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function ( ) {
 
-        document.addEventListener('deviceready', 
+        document.addEventListener ( 'deviceready', 
                                         app.onDeviceReady, 
                                         false);
 
@@ -103,7 +104,8 @@ var app = {
                         data        : $( "#loginForm" ).serialize ( ), 
                         success     : function ( response ) {
                                         if ( response['login'] == "success" ) {
-                                            alert ( "Login Success" );
+                                            user_id = response['user']['id'];
+                                            alert ( "Login Success:" + response['user']['username'] );
                                         } else {
                                             alert ( "Login Failure" );
                                         }
@@ -183,7 +185,8 @@ var app = {
 
             {
                 fileName: fileName,
-                method: method
+                method: method,
+                user_id: user_id
             }
         );
 
