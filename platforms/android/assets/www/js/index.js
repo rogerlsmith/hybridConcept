@@ -184,9 +184,9 @@ var app = {
             },
 
             {
-                fileName: fileName,
-                method: method,
-                user_id: user_id
+                'fileName': fileName,
+                'method': method,
+                'user_id': user_id
             }
         );
 
