@@ -175,7 +175,8 @@ var app = {
             audioUrl,
 
             function ( result ) {
-                alert ( 'Upload success: ' + result.responseCode );
+            //    alert ( 'Upload success: ' + result.responseCode );
+                alert ( 'bytes uploaded: ' + result.bytesSent );
             },
 
             function ( error ) {
@@ -185,8 +186,8 @@ var app = {
 
             {
                 'fileName': fileName,
-                'method': method,
-                'user_id': user_id
+/*                'method': method,
+                'user_id': user_id   */
             }
         );
 
