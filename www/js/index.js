@@ -168,6 +168,17 @@ var app = {
             method = "public";
         }
 
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = fileName;
+        options.mimeType="image/jpeg";
+
+        var params = {};
+        params.method = method;
+        params.user_id = user_id;
+
+        options.params = params;
+
         ft = new FileTransfer ( );
 
         ft.upload ( filePath,
@@ -175,8 +186,7 @@ var app = {
             audioUrl,
 
             function ( result ) {
-            //    alert ( 'Upload success: ' + result.responseCode );
-                alert ( 'bytes uploaded: ' + result.bytesSent );
+                alert ( 'Upload success: ' + result.responseCode );
             },
 
             function ( error ) {
@@ -184,11 +194,8 @@ var app = {
                 alert ( 'Error: ' + error.code );
             },
 
-            {
-                'fileName': fileName,
-/*                'method': method,
-                'user_id': user_id   */
-            }
+            options
+
         );
 
     }
