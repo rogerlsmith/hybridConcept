@@ -171,7 +171,6 @@ var app = {
         var options = new FileUploadOptions();
         options.fileKey = "file";
         options.fileName = fileName;
-        options.mimeType="image/jpeg";
 
         var params = {};
         params.method = method;

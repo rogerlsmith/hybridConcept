@@ -7,13 +7,15 @@
 //
 // Globals
 //
-var audioFile   = null;
-var filePath    = "";
-var fileName    = "";
-var audioUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
-var loginUrl    = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php";
-var ft          = null;
-var user_id     = null;
+var audioFile       = null;
+var filePath        = "";
+var fileName        = "";
+var audioUrl        = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/audio.php";
+var loginUrl        = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/user.php";
+var showFriendsUrl  = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/showFriends.php";
+var showMessagesUrl = "http://rogerlsmith.net/concept/bower_components/bootstrap/mobile/messages.php";
+var ft              = null;
+var user_id         = null;
 
 
 //
@@ -171,7 +173,6 @@ var app = {
         var options = new FileUploadOptions();
         options.fileKey = "file";
         options.fileName = fileName;
-        options.mimeType="image/jpeg";
 
         var params = {};
         params.method = method;
@@ -198,8 +199,41 @@ var app = {
 
         );
 
-    }
+    },
 
+    showFriends: function ( ) {
+
+        $.ajax ( {
+                type        : "POST",
+                url         : showFriendsUrl,
+                dataType    : 'json',
+                data        : $user_id, 
+                success     : function ( response ) {
+                                alert ( 'show friend success' );
+                            },
+                error       : function ( xhr, status, error ) {
+                                alert ( 'show friends error' );
+                            
+                            }
+        } );
+    },
+
+    showMessages: function ( ) {
+
+        $.ajax ( {
+                type        : "POST",
+                url         : showMessagessUrl,
+                dataType    : 'json',
+                data        : {'user_id' => $user_id, 'method' => 'all' }, 
+                success     : function ( response ) {
+                                alert ( 'show messages success' );
+                            },
+                error       : function ( xhr, status, error ) {
+                                alert ( 'show messages error' );
+                            
+                            }
+        } );
+    },
 };
 
 app.initialize ( );
